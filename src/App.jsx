@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import { NewsSection } from './components/NewsSection'
 
 function App() {
   const providers = [
@@ -241,6 +242,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <NewsSection />
 
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4">
