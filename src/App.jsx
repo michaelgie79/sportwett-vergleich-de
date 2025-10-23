@@ -98,10 +98,23 @@ function App() {
                 alt="Sportwett-Vergleich Logo" 
                 className="w-36 h-36 group-hover:scale-110 transition-all duration-300 filter drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] group-hover:drop-shadow-[0_0_30px_rgba(59,130,246,0.7)] group-hover:brightness-110"
               />
-              <h1 className="text-2xl font-bold">
-                <span className="text-blue-600">Sportwetten</span>
-                <span className="text-gray-900">Vergleich</span>
-              </h1>
+              <div>
+                <h1 className="text-4xl font-bold flex items-center">
+                  <span className="inline-flex">
+                    {"sportwetten-vergleich".split('').map((char, i) => (
+                      <span
+                        key={i}
+                        className="inline-block transition-all duration-200 hover:scale-125 hover:-translate-y-1 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                        style={{ transitionDelay: `${i * 10}ms` }}
+                      >
+                        {char}
+                      </span>
+                    ))}
+                  </span>
+                  <span className="text-white ml-1">.de</span>
+                </h1>
+                <div className="text-xs text-gray-400 font-medium mt-1">Dein Wett-Vergleich</div>
+              </div>
             </div>
             <nav className="hidden md:flex space-x-6">
               <a href="#vergleich" className="text-gray-700 hover:text-blue-600 transition font-medium">Vergleich</a>
