@@ -101,17 +101,17 @@ function App() {
               <div>
                 <h1 className="text-4xl font-bold flex items-center">
                   <span className="inline-flex">
-                    {"sportwetten-vergleich".split('').map((char, i) => (
+                    {"sportwett-vergleich".split('').map((char, i) => (
                       <span
                         key={i}
-                        className="inline-block transition-all duration-200 hover:scale-125 hover:-translate-y-1 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-                        style={{ transitionDelay: `${i * 10}ms` }}
+                        className="inline-block transition-all duration-100 hover:scale-125 hover:-translate-y-1 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                        style={{ transitionDelay: `${i * 5}ms` }}
                       >
                         {char}
                       </span>
                     ))}
                   </span>
-                  <span className="text-white ml-1">.de</span>
+                  <span className="text-blue-600 ml-1">.de</span>
                 </h1>
                 <div className="text-xs text-gray-400 font-medium mt-1">Dein Wett-Vergleich</div>
               </div>
