@@ -92,8 +92,12 @@ function App() {
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <span className="text-3xl">⚖️</span>
+            <div className="flex items-center space-x-3 group cursor-pointer">
+              <img 
+                src="/logo.png" 
+                alt="Sportwett-Vergleich Logo" 
+                className="w-36 h-36 group-hover:scale-110 transition-all duration-300 filter drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] group-hover:drop-shadow-[0_0_30px_rgba(59,130,246,0.7)] group-hover:brightness-110"
+              />
               <h1 className="text-2xl font-bold">
                 <span className="text-blue-600">Sportwetten</span>
                 <span className="text-gray-900">Vergleich</span>
