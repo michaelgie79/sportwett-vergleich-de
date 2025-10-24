@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'wouter'
 import './App.css'
 import { NewsSection } from './components/NewsSection'
-import { getAllProviders, getAffiliateLink } from './config/affiliate'
 
 function App() {
   const [activeFilter, setActiveFilter] = useState({
@@ -12,11 +10,7 @@ function App() {
   })
   const [viewMode, setViewMode] = useState('cards') // 'cards' or 'table'
 
-  // Get providers from central config
-  const allProviders = getAllProviders()
-  
-  // Keep local provider data for backward compatibility
-  const providers = allProviders.length > 0 ? allProviders : [
+  const providers = [
     {
       id: 1,
       name: 'Bet365',
@@ -291,18 +285,9 @@ function App() {
                         </div>
                       </div>
                     </div>
-                    <a 
-                      href={getAffiliateLink(provider.id, {
-                        source: 'sportwett-vergleich',
-                        campaign: 'provider-comparison',
-                        medium: 'card-cta'
-                      })}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`bg-gradient-to-r ${getBadgeColor(provider.badgeColor)} text-white px-8 py-3.5 rounded-xl font-bold hover:shadow-2xl transition-all transform hover:scale-105 hover:-translate-y-0.5 whitespace-nowrap w-full md:w-auto inline-block text-center`}
-                    >
+                    <button className={`bg-gradient-to-r ${getBadgeColor(provider.badgeColor)} text-white px-8 py-3.5 rounded-xl font-bold hover:shadow-2xl transition-all transform hover:scale-105 hover:-translate-y-0.5 whitespace-nowrap w-full md:w-auto`}>
                       Jetzt wetten →
-                    </a>
+                    </button>
                   </div>
 
                   {/* Key Features Grid - New Color System */}
@@ -433,18 +418,13 @@ function App() {
                   {/* Payment Methods */}
                   <div className="mt-6 pt-6 border-t border-gray-100">
                     <p className="text-xs text-gray-500 mb-2">Zahlungsmethoden:</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2">
                       {provider.paymentMethods.map((method, idx) => (
                         <span key={idx} className="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full font-medium">
                           {method}
                         </span>
                       ))}
                     </div>
-                    <Link href={`/anbieter/${provider.id}`}>
-                      <a className="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center gap-1 hover:gap-2 transition-all">
-                        Mehr erfahren über {provider.name} →
-                      </a>
-                    </Link>
                   </div>
                 </div>
               ))}
@@ -520,18 +500,9 @@ function App() {
                           </div>
                         </td>
                         <td className="px-6 py-4 text-center">
-                          <a
-                            href={getAffiliateLink(provider.id, {
-                              source: 'sportwett-vergleich',
-                              campaign: 'provider-comparison',
-                              medium: 'table-cta'
-                            })}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`bg-gradient-to-r ${getBadgeColor(provider.badgeColor)} text-white px-6 py-2 rounded-lg font-bold hover:shadow-lg transition-all transform hover:scale-105 text-sm inline-block`}
-                          >
+                          <button className={`bg-gradient-to-r ${getBadgeColor(provider.badgeColor)} text-white px-6 py-2 rounded-lg font-bold hover:shadow-lg transition-all transform hover:scale-105 text-sm`}>
                             Wetten →
-                          </a>
+                          </button>
                         </td>
                       </tr>
                     ))}
